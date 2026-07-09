@@ -333,7 +333,7 @@ const projects: Project[] = [
    title:"قرص یاد",
    description:"A spaced repetition learning application",
    banner:"./ghors_yad_banner.jpg",
-   icon:<Image src="/ghors_yad_logo.png" width={32} height={32} alt=""/>,
+   icon:<Image src="./ghors_yad_logo.png" width={32} height={32} alt=""/>,
    type:ProjectType.APP,
    technologies:[
      "Flutter",
