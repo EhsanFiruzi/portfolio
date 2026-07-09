@@ -4,22 +4,22 @@ const contactInfo = [
   {
     title: "GitHub",
     link: "https://github.com/EhsanFiruzi",
-    icon: "/github.svg",
+    icon: "./github.svg",
   },
   {
     title: "Instagram",
     link: "https://www.instagram.com/ehsan_fullstack?igsh=bTJrb2hobzQyMGU3",
-    icon: "/instagram.svg",
+    icon: "./instagram.svg",
   },
   {
     title: "LinkedIn",
     link: "https://www.linkedin.com/in/ehsan-firuzi-635721384",
-    icon: "/linkedin.svg",
+    icon: "./linkedin.svg",
   },
   {
     title: "Telegram",
     link: "https://t.me/Ehsan_Firuzi",
-    icon: "/telegram.svg",
+    icon: "./telegram.svg",
   },
 ]
 

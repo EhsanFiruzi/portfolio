@@ -653,95 +653,156 @@ function SkillCardContent({ skill }: { skill: Skill }) {
 /* -------------------------------------------------------------------------- */
 
 const defaultSkills: Skill[] = [
-  {
-    title: "Flutter",
-    description: "Build high-performance cross-platform mobile applications with Flutter and Dart.",
-    icon: <Image src="/flutter.svg" alt="Flutter" width={34} height={34} className="object-contain" />,
-    level: "expert",
-    proficiency: 90,
-    yearsOfExperience: 3,
-    category: "Mobile Development",
-    color: "#42A5F5",
-    tags: ["Flutter", "Dart", "Riverpod", "Firebase"],
-    featured: true,
-  },
-  {
-    title: "FastAPI",
-    description: "Develop fast, scalable and modern REST APIs using FastAPI and Python.",
-    icon: <Image src="/fastapi.svg" alt="FastAPI" width={34} height={34} className="object-contain" />,
-    level: "expert",
-    proficiency: 95,
-    yearsOfExperience: 2,
-    category: "Backend Development",
-    color: "#009688",
-    tags: ["Python", "REST API", "SQLAlchemy", "JWT"],
-    featured: true,
-  },
-  {
-    title: "Next.js",
-    description: "Modern React framework for building fast, SEO-friendly web applications.",
-    icon: <Image src="/next.svg" alt="Next.js" width={34} height={34} className="object-contain dark:invert" />,
-    level: "beginner",
-    proficiency: 30,
-    yearsOfExperience: 1,
-    category: "Web Development",
-    color: "#71717A",
-    tags: ["React", "SSR", "App Router", "Tailwind CSS"],
-  },
-  {
-    title: "SQL",
-    description: "Design and write efficient SQL queries for relational databases.",
-    icon: <Image src="/sql.svg" alt="SQL" width={34} height={34} className="object-contain" />,
-    level: "advanced",
-    proficiency: 85,
-    yearsOfExperience: 4,
-    category: "Database",
-    color: "#4CAF50",
-    tags: ["Joins", "Indexes", "Optimization", "Queries"],
-  },
-  {
-    title: "PostgreSQL",
-    description: "Work with PostgreSQL for scalable, reliable and production-ready databases.",
-    icon: <Image src="/postgresql.svg" alt="PostgreSQL" width={34} height={34} className="object-contain" />,
-    level: "advanced",
-    proficiency: 80,
-    yearsOfExperience: 3,
-    category: "Database",
-    color: "#336791",
-    tags: ["PostgreSQL", "Database Design", "Performance", "SQL"],
-  },
-  {
-    title: "Python",
-    description: "Write clean, maintainable and efficient software with Python.",
-    icon: <Image src="/python.svg" alt="Python" width={34} height={34} className="object-contain" />,
-    level: "expert",
-    proficiency: 100,
-    yearsOfExperience: 5,
-    category: "Programming Language",
-    color: "#306998",
-    tags: ["Python", "AsyncIO", "OOP", "Automation"],
-    featured: true,
-  },
-  {
-    title: "Python Telegram Bot",
-    description: "Develop advanced Telegram bots with Python, Webhooks and the Telegram Bot API.",
-    icon: (
-      <Image
-        src="/python-telegram-bot-logo.svg"
-        alt="Python Telegram Bot"
-        width={34}
-        height={34}
-        className="object-contain"
-      />
-    ),
-    level: "expert",
-    proficiency: 90,
-    yearsOfExperience: 2,
-    category: "Bot Development",
-    color: "#0088CC",
-    tags: ["Telegram API", "python-telegram-bot", "Webhooks", "AsyncIO"],
-    featured: true,
-  },
+ {
+     title: "Flutter",
+     description:
+       "Build high-performance cross-platform mobile applications with Flutter and Dart.",
+     icon: (
+   <Image
+     src="./flutter.svg"
+     alt="Flutter"
+     width={34}
+     height={34}
+     className="object-contain"
+   />
+ ),
+     level: "expert",
+     proficiency: 90,
+     yearsOfExperience: 3,
+     category: "Mobile Development",
+     color: "#42A5F5",
+     tags: ["Flutter", "Dart", "Riverpod", "Firebase"],
+     featured: true,
+   },
+ 
+   {
+     title: "FastAPI",
+     description:
+       "Develop fast, scalable and modern REST APIs using FastAPI and Python.",
+     icon: (
+   <Image
+     src="./fastapi.svg"
+     alt="FastAPI"
+     width={34}
+     height={34}
+     className="object-contain"
+   />
+ ),
+     level: "expert",
+     proficiency: 95,
+     yearsOfExperience: 2,
+     category: "Backend Development",
+     color: "#009688",
+     tags: ["Python", "REST API", "SQLAlchemy", "JWT"],
+     featured: true,
+   },
+ 
+   {
+     title: "Next.js",
+     description:
+       "Modern React framework for building fast, SEO-friendly web applications.",
+     icon: (
+   <Image
+     src="./next.svg"
+     alt="Next.js"
+     width={34}
+     height={34}
+     className="object-contain dark:invert"
+   />
+ ),
+     level: "beginner",
+     proficiency: 30,
+     yearsOfExperience: 1,
+     category: "Web Development",
+     color: "var(--next-accent)",// zinc-200,
+     tags: ["React", "SSR", "App Router", "Tailwind CSS"],
+   },
+ 
+   {
+     title: "SQL",
+     description:
+       "Design and write efficient SQL queries for relational databases.",
+     icon: (
+   <Image
+     src="./sql.svg"
+     alt="SQL"
+     width={34}
+     height={34}
+     className="object-contain"
+   />
+ ),
+     level: "advanced",
+     proficiency: 85,
+     yearsOfExperience: 4,
+     category: "Database",
+     color: "#4CAF50",
+     tags: ["Joins", "Indexes", "Optimization", "Queries"],
+   },
+ 
+   {
+     title: "PostgreSQL",
+     description:
+       "Work with PostgreSQL for scalable, reliable and production-ready databases.",
+     icon: (
+   <Image
+     src="./postgresql.svg"
+     alt="PostgreSQL"
+     width={34}
+     height={34}
+     className="object-contain"
+   />
+ ),
+     level: "advanced",
+     proficiency: 80,
+     yearsOfExperience: 3,
+     category: "Database",
+     color: "#336791",
+     tags: ["PostgreSQL", "Database Design", "Performance", "SQL"],
+   },
+ 
+   {
+     title: "Python",
+     description:
+       "Write clean, maintainable and efficient software with Python.",
+     icon: (
+   <Image
+     src="./python.svg"
+     alt="Python"
+     width={34}
+     height={34}
+     className="object-contain"
+   />
+ ),
+     level: "expert",
+     proficiency: 100,
+     yearsOfExperience: 5,
+     category: "Programming Language",
+     color: "#306998",
+     tags: ["Python", "AsyncIO", "OOP", "Automation"],
+     featured: true,
+   },
+ 
+   {
+     title: "Python Telegram Bot",
+     description:
+       "Develop advanced Telegram bots with Python, Webhooks and the Telegram Bot API.",
+     icon: (
+   <Image
+     src="./python-telegram-bot-logo.svg"
+     alt="Python Telegram Bot"
+     width={34}
+     height={34}
+     className="object-contain"
+   />
+ ),
+     level: "expert",
+     proficiency: 90,
+     yearsOfExperience: 2,
+     category: "Bot Development",
+     color: "#0088CC",
+     tags: ["Telegram API", "python-telegram-bot", "Webhooks", "AsyncIO"],
+     featured: true,
+   },
 ]
 
 /* -------------------------------------------------------------------------- */

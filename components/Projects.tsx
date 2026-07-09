@@ -275,7 +275,7 @@ function StoreButton({
     case StoreType.MYKET:
       icon =
       <Image
-        src="/myket-get-en.png"
+        src="./myket-get-en.png"
         alt="Myket"
         width={150}
         height={50}
@@ -287,7 +287,7 @@ function StoreButton({
     case StoreType.BAZAAR:
       icon =
       <Image
-        src="/get-cafebazaar-en.png"
+        src="./get-cafebazaar-en.png"
         alt="Cafe Bazaar"
         width={150}
         height={50}
@@ -299,7 +299,7 @@ function StoreButton({
     case StoreType.GOOGLE_PLAY:
       icon =
       <Image
-        src="/google-paly-download.svg"
+        src="./google-paly-download.svg"
         alt="Google Play"
         width={150}
         height={50}
@@ -332,7 +332,7 @@ const projects: Project[] = [
  {
    title:"قرص یاد",
    description:"A spaced repetition learning application",
-   banner:"/ghors_yad_banner.jpg",
+   banner:"./ghors_yad_banner.jpg",
    icon:<Image src="/ghors_yad_logo.png" width={32} height={32} alt=""/>,
    type:ProjectType.APP,
    technologies:[

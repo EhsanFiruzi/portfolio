@@ -4,11 +4,11 @@ function Profile() {
   return (
     <div className="flex flex-col items-center justify-center mt-10 text-center">
       <Image
-  src="/profile.jpg"
-  alt="Profile"
-  width={160}
-  height={160}
-  className="mt-10 rounded-full object-cover"
+      src="./profile.jpg"
+      alt="Profile"
+      width={160}
+      height={160}
+      className="mt-10 rounded-full object-cover"
 />
 
       <h1 className="mt-5 text-2xl font-bold">

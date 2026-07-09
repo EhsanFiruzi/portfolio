@@ -193,7 +193,7 @@ const skills: Skill[] = [
       "Build high-performance cross-platform mobile applications with Flutter and Dart.",
     icon: (
   <Image
-    src="/flutter.svg"
+    src="./flutter.svg"
     alt="Flutter"
     width={34}
     height={34}
@@ -215,7 +215,7 @@ const skills: Skill[] = [
       "Develop fast, scalable and modern REST APIs using FastAPI and Python.",
     icon: (
   <Image
-    src="/fastapi.svg"
+    src="./fastapi.svg"
     alt="FastAPI"
     width={34}
     height={34}
@@ -237,7 +237,7 @@ const skills: Skill[] = [
       "Modern React framework for building fast, SEO-friendly web applications.",
     icon: (
   <Image
-    src="/next.svg"
+    src="./next.svg"
     alt="Next.js"
     width={34}
     height={34}
@@ -258,7 +258,7 @@ const skills: Skill[] = [
       "Design and write efficient SQL queries for relational databases.",
     icon: (
   <Image
-    src="/sql.svg"
+    src="./sql.svg"
     alt="SQL"
     width={34}
     height={34}
@@ -279,7 +279,7 @@ const skills: Skill[] = [
       "Work with PostgreSQL for scalable, reliable and production-ready databases.",
     icon: (
   <Image
-    src="/postgresql.svg"
+    src="./postgresql.svg"
     alt="PostgreSQL"
     width={34}
     height={34}
@@ -300,7 +300,7 @@ const skills: Skill[] = [
       "Write clean, maintainable and efficient software with Python.",
     icon: (
   <Image
-    src="/python.svg"
+    src="./python.svg"
     alt="Python"
     width={34}
     height={34}
@@ -322,7 +322,7 @@ const skills: Skill[] = [
       "Develop advanced Telegram bots with Python, Webhooks and the Telegram Bot API.",
     icon: (
   <Image
-    src="/python-telegram-bot-logo.svg"
+    src="./python-telegram-bot-logo.svg"
     alt="Python Telegram Bot"
     width={34}
     height={34}
