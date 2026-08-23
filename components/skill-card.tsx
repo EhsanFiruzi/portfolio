@@ -32,6 +32,7 @@ function formatYears(y: number) {
 export function SkillCard({ skill }: { skill: Skill }) {
 
   const [progress, setProgress] = useState(0)
+  const [tagsExpanded, setTagsExpanded] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   // پرشدن پراگرس بار وقتی کارت وارد viewport می‌شه
@@ -53,6 +54,11 @@ export function SkillCard({ skill }: { skill: Skill }) {
     return () => observer.disconnect()
   }, [skill.proficiency])
 
+  const visibleTags = skill.tags ?? []
+  const hasExtraTags = visibleTags.length > 3
+  const shownTags = tagsExpanded ? visibleTags : visibleTags.slice(0, 3)
+  const hiddenCount = visibleTags.length - 3
+
   return (
     <div
       ref={ref}
@@ -73,11 +79,11 @@ export function SkillCard({ skill }: { skill: Skill }) {
         )}
       >
 
-        <CardHeader className="px-5 pt-5">
-          <div className="flex items-start gap-3">
+        <CardHeader className="px-4 pt-4 sm:px-5 sm:pt-5">
+          <div className="flex items-start gap-2.5 sm:gap-3">
             <div
               className={cn(
-                "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl",
+                "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl sm:h-12 sm:w-12",
                 "bg-(--skill-accent)/15 text-(--skill-accent)",
                 "transition-transform duration-300 group-hover/skill:scale-105"
               )}
@@ -87,7 +93,7 @@ export function SkillCard({ skill }: { skill: Skill }) {
 
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">
-                <h3 className="truncate font-heading text-base font-semibold leading-tight">
+                <h3 className="truncate font-heading text-sm font-semibold leading-tight sm:text-base">
                   {skill.title}
                 </h3>
                 {skill.featured && (
@@ -97,14 +103,14 @@ export function SkillCard({ skill }: { skill: Skill }) {
                   />
                 )}
               </div>
-              <p className="mt-0.5 text-xs font-medium text-muted-foreground">
+              <p className="mt-0.5 truncate text-xs font-medium text-muted-foreground">
                 {skill.category}
               </p>
             </div>
           </div>
         </CardHeader>
 
-        <CardContent className="px-5">
+        <CardContent className="px-4 sm:px-5">
           <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
             {skill.description}
           </p>
@@ -128,9 +134,9 @@ export function SkillCard({ skill }: { skill: Skill }) {
           </div>
 
           {/* Tags */}
-          {skill.tags && skill.tags.length > 0 && (
+          {visibleTags.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-1.5">
-              {skill.tags.slice(0, 3).map((tag) => (
+              {shownTags.map((tag) => (
                 <span
                   key={tag}
                   className="rounded-md bg-foreground/5 px-2 py-1 text-[11px] font-medium text-foreground/70"
@@ -138,17 +144,36 @@ export function SkillCard({ skill }: { skill: Skill }) {
                   {tag}
                 </span>
               ))}
-              {skill.tags.length > 3 && (
-                <span className="rounded-md bg-(--skill-accent)/10 px-2 py-1 text-[11px] font-semibold text-(--skill-accent)">
-                  +{skill.tags.length - 3}
-                </span>
+
+              {hasExtraTags && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setTagsExpanded((prev) => !prev)
+                  }}
+                  aria-expanded={tagsExpanded}
+                  aria-label={
+                    tagsExpanded
+                      ? "Show fewer tags"
+                      : `Show ${hiddenCount} more tags`
+                  }
+                  className={cn(
+                    "flex min-h-8 items-center rounded-md px-2 py-1 text-[11px] font-semibold",
+                    "bg-(--skill-accent)/10 text-(--skill-accent)",
+                    "transition-colors hover:bg-(--skill-accent)/20",
+                    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-(--skill-accent)/50"
+                  )}
+                >
+                  {tagsExpanded ? "Show less" : `+${hiddenCount}`}
+                </button>
               )}
             </div>
           )}
         </CardContent>
 
-        <CardFooter className="border-t border-foreground/10 px-5 pt-4 text-xs text-muted-foreground">
-          <div className="flex w-full items-center gap-3">
+        <CardFooter className="border-t border-foreground/10 px-4 pt-4 text-xs text-muted-foreground sm:px-5">
+          <div className="flex w-full flex-wrap items-center gap-x-3 gap-y-2">
             {/* Level dots */}
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1">
@@ -167,7 +192,7 @@ export function SkillCard({ skill }: { skill: Skill }) {
               <span className="font-medium">{LEVEL_LABEL[skill.level]}</span>
             </div>
 
-            <div className="ml-auto flex items-center gap-3">
+            <div className="flex items-center gap-3 sm:ml-auto">
               <div className="flex items-center gap-1">
                 <Clock className="size-3.5" />
                 <span>{formatYears(skill.yearsOfExperience)} yrs</span>

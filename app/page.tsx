@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
         <Profile/>
-        <div className="flex m-14">
+        <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-8 lg:px-14">
           <SkillsSection />
         </div>
         <ProjectsSection/>
