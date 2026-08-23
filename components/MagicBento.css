@@ -4,7 +4,7 @@
 
 .bento-section {
   position: relative;
-  overflow-x: hidden;
+  overflow: visible;
   user-select: none;
 }
 
