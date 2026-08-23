@@ -19,7 +19,7 @@ function Profile() {
         Full-Stack Developer
       </h2>
 
-      <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground">
+      <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground px-4 sm:px-0">
         I am a full-stack developer passionate about building modern,
         scalable applications. I work with Flutter for mobile development,
         Python and FastAPI for backend systems, and modern web technologies
