@@ -230,7 +230,7 @@ const skills: Skill[] = [
     yearsOfExperience: 3,
     category: "Mobile Development",
     color: "#42A5F5",
-    tags: ["Flutter", "Dart", "Riverpod", "Firebase"],
+    tags: ["Flutter", "Dart", "Riverpod", "State Management"],
     featured: true,
   },
 
@@ -319,25 +319,25 @@ const skills: Skill[] = [
     tags: ["PostgreSQL", "Database Design", "Performance", "SQL"],
   },
 
-  {
+    {
     title: "Python",
     description:
-      "Write clean, maintainable and efficient software with Python.",
+      "Build backend services, APIs, automation tools, and asynchronous applications with Python.",
     icon: (
-  <Image
-    src="./python.svg"
-    alt="Python"
-    width={34}
-    height={34}
-    className="object-contain"
-  />
-),
+      <Image
+        src="./python.svg"
+        alt="Python"
+        width={34}
+        height={34}
+        className="object-contain"
+      />
+    ),
     level: "expert",
-    proficiency: 100,
+    proficiency: 95,
     yearsOfExperience: 5,
     category: "Programming Language",
     color: "#306998",
-    tags: ["Python", "AsyncIO", "OOP", "Automation"],
+    tags: ["Python", "FastAPI", "AsyncIO", "SQLAlchemy", "OOP", "Automation"],
     featured: true,
   },
 
