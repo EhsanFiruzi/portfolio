@@ -683,14 +683,20 @@ const defaultSkills: Skill[] = [
     description:
       "Build high-performance cross-platform mobile applications with Flutter and Dart.",
     icon: (
-      <Image src="./flutter.svg" alt="Flutter" width={34} height={34} className="object-contain" />
-    ),
+  <Image
+    src="./flutter.svg"
+    alt="Flutter"
+    width={34}
+    height={34}
+    className="object-contain"
+  />
+),
     level: "expert",
     proficiency: 90,
     yearsOfExperience: 3,
     category: "Mobile Development",
     color: "#42A5F5",
-    tags: ["Flutter", "Dart", "Riverpod", "Firebase"],
+    tags: ["Flutter", "Dart", "Riverpod", "State Management"],
     featured: true,
   },
 
@@ -699,8 +705,14 @@ const defaultSkills: Skill[] = [
     description:
       "Develop fast, scalable and modern REST APIs using FastAPI and Python.",
     icon: (
-      <Image src="./fastapi.svg" alt="FastAPI" width={34} height={34} className="object-contain" />
-    ),
+  <Image
+    src="./fastapi.svg"
+    alt="FastAPI"
+    width={34}
+    height={34}
+    className="object-contain"
+  />
+),
     level: "expert",
     proficiency: 95,
     yearsOfExperience: 2,
@@ -715,26 +727,35 @@ const defaultSkills: Skill[] = [
     description:
       "Modern React framework for building fast, SEO-friendly web applications.",
     icon: (
-      <Image
-        src="./next.svg"
-        alt="Next.js"
-        width={34}
-        height={34}
-        className="object-contain dark:invert"
-      />
-    ),
+  <Image
+    src="./next.svg"
+    alt="Next.js"
+    width={34}
+    height={34}
+    className="object-contain dark:invert"
+  />
+),
     level: "beginner",
     proficiency: 30,
     yearsOfExperience: 1,
     category: "Web Development",
-    color: "var(--next-accent)", // zinc-200,
+    color: "var(--next-accent)",// zinc-200,
     tags: ["React", "SSR", "App Router", "Tailwind CSS"],
   },
 
   {
     title: "SQL",
-    description: "Design and write efficient SQL queries for relational databases.",
-    icon: <Image src="./sql.svg" alt="SQL" width={34} height={34} className="object-contain" />,
+    description:
+      "Design and write efficient SQL queries for relational databases.",
+    icon: (
+  <Image
+    src="./sql.svg"
+    alt="SQL"
+    width={34}
+    height={34}
+    className="object-contain"
+  />
+),
     level: "advanced",
     proficiency: 85,
     yearsOfExperience: 4,
@@ -748,8 +769,14 @@ const defaultSkills: Skill[] = [
     description:
       "Work with PostgreSQL for scalable, reliable and production-ready databases.",
     icon: (
-      <Image src="./postgresql.svg" alt="PostgreSQL" width={34} height={34} className="object-contain" />
-    ),
+    <Image
+      src="./postgresql.svg"
+            alt="PostgreSQL"
+            width={34}
+            height={34}
+            className="object-contain"
+          />
+        ),
     level: "advanced",
     proficiency: 80,
     yearsOfExperience: 3,
@@ -758,16 +785,25 @@ const defaultSkills: Skill[] = [
     tags: ["PostgreSQL", "Database Design", "Performance", "SQL"],
   },
 
-  {
+    {
     title: "Python",
-    description: "Write clean, maintainable and efficient software with Python.",
-    icon: <Image src="./python.svg" alt="Python" width={34} height={34} className="object-contain" />,
+    description:
+      "Build backend services, APIs, automation tools, and asynchronous applications with Python.",
+    icon: (
+      <Image
+        src="./python.svg"
+        alt="Python"
+        width={34}
+        height={34}
+        className="object-contain"
+      />
+    ),
     level: "expert",
-    proficiency: 100,
+    proficiency: 95,
     yearsOfExperience: 5,
     category: "Programming Language",
     color: "#306998",
-    tags: ["Python", "AsyncIO", "OOP", "Automation"],
+    tags: ["Python", "FastAPI", "AsyncIO", "SQLAlchemy", "OOP", "Automation"],
     featured: true,
   },
 
