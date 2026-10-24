@@ -1,50 +1,47 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata, Viewport } from "next"
+import { JetBrains_Mono, Plus_Jakarta_Sans, Vazirmatn } from "next/font/google"
+import "./globals.css"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import { cn } from "@/lib/utils"
+import { site } from "@/data/site"
+import { ThemeProvider } from "@/components/theme-provider"
+import { Navbar } from "@/components/navbar"
+import { CursorGlow } from "@/components/cursor-glow"
+import { Footer } from "@/components/footer"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// فونت اصلی سایت؛ برای عوضش فقط همین یه خط رو تغییر بده
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" })
+const code = JetBrains_Mono({ subsets: ["latin"], variable: "--font-code" })
+// برای متن فارسی مثل «قرص یاد»
+const persian = Vazirmatn({ subsets: ["arabic"], variable: "--font-persian" })
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "My Portfolio",
-};
+  title: `${site.name} — ${site.role}`,
+  description: site.headline,
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0e1020" },
+    { media: "(prefers-color-scheme: light)", color: "#fafaff" },
+  ],
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(
-        "h-full",
-        "antialiased",
-        geistSans.variable,
-        geistMono.variable,
-        "font-sans",
-        inter.variable
-      )}
+      className={cn(jakarta.variable, code.variable, persian.variable)}
     >
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="min-h-dvh">
+        <ThemeProvider>
+          <CursorGlow />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
