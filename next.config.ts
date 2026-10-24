@@ -7,9 +7,8 @@ const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : ""
 const nextConfig: NextConfig = {
   output: "export",
   basePath,
-  trailingSlash: true,
+  trailingSlash: true, // asset() برای صفحه‌های تو در تو به این وابسته‌ست
   images: { unoptimized: true },
-  env: { NEXT_PUBLIC_BASE_PATH: basePath },
 }
 
 export default nextConfig

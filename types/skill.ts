@@ -1,19 +1,18 @@
-export type SkillLevel = "beginner" | "intermediate" | "advanced" | "expert"
-export type SkillGroup = "mobile" | "backend" | "web" | "data"
+export interface SkillItem {
+  name: string
+  icon?: string
+  invertInDark?: boolean
+  /** فقط اگه دقیق باشه */
+  years?: number
+  /** توضیح کوتاه، مثل «Currently learning» */
+  note?: string
+  /** slug پروژه‌هایی که این مهارت توشون استفاده شده (از data/projects.ts) */
+  projects?: string[]
+}
 
-export interface Skill {
+export interface SkillGroup {
+  id: string
   title: string
   description: string
-  /** مسیر آیکون داخل public */
-  icon: string
-  invertInDark?: boolean
-  level: SkillLevel
-  proficiency: number // 0..100
-  yearsOfExperience: number
-  category: string
-  group: SkillGroup
-  /** هر رنگ CSS معتبر (hex یا var(...)) */
-  color: string
-  tags?: string[]
-  featured?: boolean
+  items: SkillItem[]
 }

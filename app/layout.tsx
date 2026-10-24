@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils"
 import { site } from "@/data/site"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar"
-import { CursorGlow } from "@/components/cursor-glow"
 import { Footer } from "@/components/footer"
 
 // فونت اصلی سایت؛ برای عوضش فقط همین یه خط رو تغییر بده
@@ -15,9 +14,23 @@ const code = JetBrains_Mono({ subsets: ["latin"], variable: "--font-code" })
 // برای متن فارسی مثل «قرص یاد»
 const persian = Vazirmatn({ subsets: ["arabic"], variable: "--font-persian" })
 
+const title = `${site.name} — ${site.role}`
+const ogImage = `${site.url}/${site.avatar}`
+
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
+  title,
   description: site.headline,
+  alternates: { canonical: `${site.url}/` },
+  openGraph: {
+    title,
+    description: site.headline,
+    url: `${site.url}/`,
+    siteName: site.name,
+    type: "website",
+    locale: "en_US",
+    images: [{ url: ogImage, alt: `Portrait of ${site.name}` }],
+  },
+  twitter: { card: "summary", title, description: site.headline, images: [ogImage] },
 }
 
 export const viewport: Viewport = {
@@ -36,9 +49,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     >
       <body className="min-h-dvh">
         <ThemeProvider>
-          <CursorGlow />
+          <a
+            href="#main"
+            className="sr-only z-[60] rounded-md bg-signal px-4 py-2 text-sm font-semibold text-signal-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          >
+            Skip to content
+          </a>
           <Navbar />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
