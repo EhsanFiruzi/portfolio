@@ -54,7 +54,10 @@ export interface Project {
   webTechnologies?: string[]
   downloads: DownloadLink[]
   githubUrl?: string
+  /** دموی آنلاین و قابل استفاده از خود محصول */
   liveDemoUrl?: string
+  /** وب‌سایت معرفی محصول (لندینگ)؛ لزوماً دمو نیست */
+  websiteUrl?: string
   featured?: boolean
   caseStudy: CaseStudy
 }

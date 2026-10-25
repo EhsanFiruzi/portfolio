@@ -1,16 +1,5 @@
 import type { Project } from "@/types/project"
 
-/**
- * قانون این فایل: فقط چیزی بنویس که واقعاً درسته و قابل اثباته.
- * هر فیلد اختیاری که خالی باشه، همون بخش تو سایت نمایش داده نمیشه.
- *
- * TODO (برای خودت):
- *  - liveDemoUrl برای GoalProof (آدرس دموی وب)
- *  - screenshots واقعی هر دو اپ (مسیر داخل public + alt)
- *  - توضیح/ویژگی‌های «قرص یاد» (الان فقط اطلاعات تأییدشده نوشته شده)
- *  - githubUrl اگه ریپو عمومی‌ه
- *  - اگه دموی وب GoalProof استک جدا داره، تو webTechnologies بنویس
- */
 export const projects: Project[] = [
   {
     slug: "goalproof",
@@ -24,6 +13,7 @@ export const projects: Project[] = [
     status: "published",
     platform: "Android",
     year: 2026,
+    websiteUrl: "https://ehsanfiruzi.github.io/goalproof_web/fa/",
     technologies: ["Flutter", "Dart", "Riverpod", "Isar", "MVVM", "shadcn UI"],
     downloads: [{ store: "myket", url: "https://myket.ir/app/ir.ehsan.goalproof" }],
     featured: true,

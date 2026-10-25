@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, CodeXml, ExternalLink } from "lucide-react"
+import { ArrowLeft, CodeXml, ExternalLink, Globe } from "lucide-react"
 
 import { projects, getProject } from "@/data/projects"
 import { site } from "@/data/site"
@@ -34,6 +34,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: { title, description: project.summary, url, type: "article", images: [{ url: image }] },
     twitter: { card: "summary_large_image", title, description: project.summary, images: [image] },
   }
+}
+
+function LinkButton({ href, label, icon }: { href: string; label: string; icon: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex h-10 items-center gap-2 rounded-full border px-5 text-sm font-semibold transition-colors hover:bg-muted"
+    >
+      {icon}
+      {label}
+    </a>
+  )
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -127,27 +141,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             {project.downloads.map((d) => (
               <StoreBadge key={d.url} download={d} depth={DEPTH} />
             ))}
+            {project.websiteUrl && (
+              <LinkButton href={project.websiteUrl} label="Website" icon={<Globe className="size-4" aria-hidden />} />
+            )}
             {project.liveDemoUrl && (
-              <a
-                href={project.liveDemoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-full border px-5 text-sm font-semibold transition-colors hover:bg-muted"
-              >
-                <ExternalLink className="size-4" aria-hidden />
-                Live demo
-              </a>
+              <LinkButton href={project.liveDemoUrl} label="Live demo" icon={<ExternalLink className="size-4" aria-hidden />} />
             )}
             {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-full border px-5 text-sm font-semibold transition-colors hover:bg-muted"
-              >
-                <CodeXml className="size-4" aria-hidden />
-                Source code
-              </a>
+              <LinkButton href={project.githubUrl} label="Source code" icon={<CodeXml className="size-4" aria-hidden />} />
             )}
           </div>
         </header>

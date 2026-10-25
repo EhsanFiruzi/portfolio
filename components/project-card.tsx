@@ -97,6 +97,11 @@ export function ProjectCard({ project }: { project: Project }) {
                 <CodeXml size={18} aria-hidden />
               </ActionButton>
             )}
+            {project.websiteUrl && (
+              <ActionButton href={project.websiteUrl} label={`${project.title} website`}>
+                <Globe size={18} aria-hidden />
+              </ActionButton>
+            )}
             {project.liveDemoUrl && (
               <ActionButton href={project.liveDemoUrl} label={`${project.title} live demo`}>
                 <ExternalLink size={18} aria-hidden />
