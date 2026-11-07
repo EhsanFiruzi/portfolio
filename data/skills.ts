@@ -11,11 +11,11 @@ export const skillGroups: SkillGroup[] = [
     title: "Mobile",
     description: "Cross-platform apps with Flutter, from architecture to store release.",
     items: [
-      { name: "Flutter", icon: "flutter.svg", years: 3, projects: ["goalproof", "ghors-yad"] },
-      { name: "Dart", projects: ["goalproof", "ghors-yad"] },
-      { name: "Riverpod", projects: ["goalproof"] },
-      { name: "MVVM", projects: ["goalproof", "ghors-yad"] },
-      { name: "Isar", projects: ["goalproof"] },
+      { name: "Flutter", icon: "flutter.svg", years: 3, projects: ["goalproof", "ghors-yad", "moonu"] },
+      { name: "Dart", projects: ["goalproof", "ghors-yad", "moonu"] },
+      { name: "Riverpod", projects: ["goalproof", "moonu"] },
+      { name: "MVVM", projects: ["goalproof", "ghors-yad", "moonu"] },
+      { name: "Isar", projects: ["goalproof", "moonu"] },
     ],
   },
   {

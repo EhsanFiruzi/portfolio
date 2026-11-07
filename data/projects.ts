@@ -87,6 +87,58 @@ export const projects: Project[] = [
       architecture: ["MVVM structure on the client"],
     },
   },
+  {
+    slug: "moonu",
+    title: "Moonu",
+    websiteUrl:"https://moonu.ir/",
+    summary:
+      "Personalized sleep sounds and sleep routine app with a bear mascot named Momo. Bilingual in Persian and English, built with Flutter.",
+    icon: "moonu_icon.png",
+    banner: "moonu_banner.png",
+    accent: "#6366F1",
+    type: "app",
+    status: "in-progress",
+    platform: "Android",
+    year: 2026,
+    technologies: ["Flutter", "Dart", "Riverpod", "Isar", "MVVM"],
+    downloads: [
+      { store: "myket", url: "https://myket.ir/app/ir.ehsan.moonu" },
+    ],
+    caseStudy: {
+      overview:
+        "Moonu is a sleep sounds and sleep routine app built around a small bear in pajamas called Momo. Users play calming sounds through the night, build their own mixes, and keep a routine with a mascot that reacts to how they sleep.",
+      features: [
+        "Momo, a bear mascot that sleeps and wakes with the user, gets sleepy after a late night and stays fresh after a good morning routine",
+        "Onboarding as a conversation with Momo that asks for the user's name, a name for the bear, and average and target sleep hours",
+        "White, pink and brown noise plus nature sounds such as rain, ocean, forest, fireplace and wind",
+        "Configurable playback: a set number of hours, always on, or quiet in the middle of the night and back shortly before morning",
+        "Sound mixer that combines several sounds with per-sound volume and saves the result as a reusable named mix",
+        "Full Persian and English localization with right-to-left layouts",
+      ],
+      role: [
+        "Designing and building the Flutter application end to end",
+        "Implementing state management, the local data layer and localization",
+      ],
+      architecture: [
+        "MVVM structure on the client",
+        "Riverpod (Notifier) for state management",
+        "Isar as the local database for saved mixes",
+        "SharedPreferences for lightweight settings",
+        "gen-l10n for Persian and English strings",
+      ],
+      screenshots: [
+        { src: "app_screenshots_moonu/photo_1_2026-10-20_09-42-50.webp", alt: "Moonu screenshot 1" },
+        { src: "app_screenshots_moonu/photo_2_2026-10-20_09-42-50.webp", alt: "Moonu screenshot 2" },
+        { src: "app_screenshots_moonu/photo_3_2026-10-20_09-42-50.webp", alt: "Moonu screenshot 3" },
+        { src: "app_screenshots_moonu/photo_4_2026-10-20_09-42-50.webp", alt: "Moonu screenshot 4" },
+        { src: "app_screenshots_moonu/photo_5_2026-10-20_09-42-50.webp", alt: "Moonu screenshot 5" },
+        { src: "app_screenshots_moonu/photo_6_2026-10-20_09-42-50.webp", alt: "Moonu screenshot 6" },
+        { src: "app_screenshots_moonu/photo_7_2026-10-20_09-42-50.webp", alt: "Moonu screenshot 7" },
+        { src: "app_screenshots_moonu/photo_2026-10-20_10-09-04.webp", alt: "Moonu screenshot 8" },
+      ],
+      
+    },
+  },
 ]
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug)
