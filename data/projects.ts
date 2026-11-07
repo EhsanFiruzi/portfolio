@@ -97,7 +97,7 @@ export const projects: Project[] = [
     banner: "moonu_banner.png",
     accent: "#6366F1",
     type: "app",
-    status: "in-progress",
+    status: "published",
     platform: "Android",
     year: 2026,
     technologies: ["Flutter", "Dart", "Riverpod", "Isar", "MVVM"],
